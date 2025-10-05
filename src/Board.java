@@ -3,7 +3,6 @@ import java.util.random.RandomGenerator;
 
 public class Board {
     private String[] rouletteColors;
-    private int randomNum;
     public Board(){
         rouletteColors=new String[]{
                 "green", // 0
@@ -44,14 +43,12 @@ public class Board {
                 "black", // 35
                 "red"   // 36
         };
-        randomNum=new Random().nextInt(37);
+    }
+    public int getNextRandomNum(){
+        return new Random().nextInt(37);
     }
 
     public String[] getRouletteColors() {
         return rouletteColors;
-    }
-
-    public int getRandomNum() {
-        return randomNum;
     }
 }
