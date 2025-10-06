@@ -1,7 +1,7 @@
 package parsers;
 
-import ToupleAndToupleStream.Touple;
-import ToupleAndToupleStream.ToupleStream;
+import betAndbetStream.Interface.Bet;
+import betAndbetStream.BetStream;
 
 import java.util.ArrayList;
 
@@ -10,19 +10,19 @@ public class parseInput {
     public parseInput(String st){
         this.st=st;
     }
-    public ToupleStream parse(){
+    public BetStream parse(){
         StringBuilder str=new StringBuilder();
-        ArrayList<Touple> lst=new ArrayList<>();
+        ArrayList<Bet> lst=new ArrayList<>();
         for(int i=0;i<st.length();i++){
             if(st.charAt(i)==','){
-                lst.add(new parseSingleTouple(str.toString()).parse());
+                lst.add(new parseBet(str.toString()).parse());
                 str=new StringBuilder();
                 continue;
             }
             str.append(st.charAt(i));
         }
-        lst.add(new parseSingleTouple(str.toString()).parse());
-        return new ToupleStream(lst);
+        lst.add(new parseBet(str.toString()).parse());
+        return new BetStream(lst);
 
     }
 

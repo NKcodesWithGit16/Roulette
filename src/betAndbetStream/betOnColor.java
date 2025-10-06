@@ -21,6 +21,9 @@ public class betOnColor implements Bet {
     @Override
     public int Profit(Board brd){
         if(isWinning(brd)){
+            if(clr==Color.Green){
+                return 35*placedAmount;
+            }
             return placedAmount;
         }
         return -placedAmount;

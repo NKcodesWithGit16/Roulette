@@ -12,7 +12,7 @@ public class betOnEvenOdd implements Bet {
         this.placedAmount=placedAmount;
     }
 
-    public int getPlacedAmount() {
+    public int getPlaced() {
         return placedAmount;
     }
 
